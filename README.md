@@ -14,8 +14,12 @@ A React-based weather application that fetches and displays weather data for a s
 - **Backend API:** [Weather API](https://weather-app-task-84mg.onrender.com/)
 - **GET** `/weather?city={city}`: Fetch current weather data for the specified city. 
 - **GET** `/summaries?city={city}`: Fetch daily weather summaries for the specified city.  
-- **POST** `/alerts`: Create a new alert with the specified temperature threshold and condition.  
-  
+- **POST** `/alerts`: Create a new alert with the specified temperature threshold and condition.
+
+## Hosted Link
+
+You can access the live application at: [Weather Application](https://weather-app-task-1.onrender.com/)
+ 
 ## Technologies Used
 
 - **Frontend:** React
