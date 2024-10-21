@@ -23,7 +23,7 @@ function Weather() {
     setShowAlertForm(false);
 
     try {
-      const response = await fetch(`http://localhost:6969/weather?city=${city}`);
+      const response = await fetch(`https://weather-app-task-84mg.onrender.com/weather?city=${city}`);
       if (!response.ok) {
         setError("City not found");
         return;
@@ -37,7 +37,7 @@ function Weather() {
 
   const fetchDailySummary = async (searchedCity) => {
     try {
-      const response = await fetch(`http://localhost:6969/summaries?city=${searchedCity}`);
+      const response = await fetch(`https://weather-app-task-84mg.onrender.com/summaries?city=${searchedCity}`);
       if (!response.ok) {
         setError("Failed to fetch daily summary");
         return;
@@ -74,7 +74,7 @@ function Weather() {
     }
 
     try {
-      const response = await fetch(`http://localhost:6969/alerts`, {
+      const response = await fetch(`https://weather-app-task-84mg.onrender.com/alerts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ function Weather() {
 
   const fetchAlertsForCity = async (searchedCity) => {
     try {
-      const response = await fetch(`http://localhost:6969/alerts?city=${searchedCity}`);
+      const response = await fetch(`https://weather-app-task-84mg.onrender.com/alerts?city=${searchedCity}`);
       if (!response.ok) {
         throw new Error("Failed to fetch alerts");
       }
