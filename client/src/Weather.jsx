@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaCloud } from "react-icons/fa";
-import "./Weather.css"
+import "./Weather.css";
+
 function Weather() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
@@ -12,7 +13,7 @@ function Weather() {
     tempThreshold: "",
     condition: "greater",
   });
-  const [alerts, setAlerts] = useState([]);
+  const [alertCreationMessage, setAlertCreationMessage] = useState("");
 
   const fetchWeather = async (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ function Weather() {
     setDailySummary([]);
     setShowSummary(false);
     setShowAlertForm(false);
+    setAlertCreationMessage(""); // Reset alert message
 
     try {
       const response = await fetch(`https://weather-app-task-84mg.onrender.com/weather?city=${city}`);
@@ -91,25 +93,15 @@ function Weather() {
         throw new Error("Failed to create alert");
       }
       const alert = await response.json();
+
+      // Show a confirmation message
+      setAlertCreationMessage("Alert created successfully!");
+
       console.log("Alert created:", alert);
       setAlertData({ tempThreshold: "", condition: "greater" });
       setShowAlertForm(false);
-      fetchAlertsForCity(city);
     } catch (error) {
       setError(error.message);
-    }
-  };
-
-  const fetchAlertsForCity = async (searchedCity) => {
-    try {
-      const response = await fetch(`https://weather-app-task-84mg.onrender.com/alerts?city=${searchedCity}`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch alerts");
-      }
-      const alertsData = await response.json();
-      setAlerts(alertsData);
-    } catch (error) {
-      setError("Error fetching alerts");
     }
   };
 
@@ -189,20 +181,11 @@ function Weather() {
         </div>
       )}
 
-      {alerts.length > 0 && (
-        <div className="alerts">
-          <h3>Alerts for {city}</h3>
-          <ul>
-            {alerts.map((alert) => (
-              <li key={alert._id}>
-                {alert.city}: {alert.isTriggered ? "Triggered" : "Not Triggered"} - {alert.tempThreshold}°C
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* Display the alert creation message */}
+      {alertCreationMessage && <p>{alertCreationMessage}</p>}
     </div>
   );
 }
 
 export default Weather;
+
