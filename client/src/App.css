@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: white
+}
+.weather-widget {
+  background: linear-gradient(120deg, #47bbff, #2b32b2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
+  margin: 20px auto;
+  color: white;
+  text-align: center;
+}
+.App{
+  text-align: center;
+}
+form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+input{
+ padding: 10px; 
+ border-radius: 10px;
+ outline: none;
+ border: 1px solid gray;
+ color:  #2b32b2;
+}
+button{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color:  #2b32b2;
+}
+.temp{
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -1,0 +1,89 @@
+.weather-widget {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .data {
+    margin-top: 20px;
+  }
+  
+  .temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .temp div {
+    text-align: left;
+  }
+  
+  .alert-creation {
+    margin-top: 20px;
+  }
+  
+  .alert-creation div {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .alerts {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .weather-widget {
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .temp {
+      flex-direction: column;
+    }
+  
+    .alert-creation div {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .temp {
+      font-size: 14px;
+    }
+  
+    .alert-creation button {
+      width: 100%;
+    }
+  
+    .alert-creation div input,
+    .alert-creation div select,
+    .alert-creation div button {
+      width: 100%;
+    }
+  
+    ul li {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  button{
+    cursor: pointer;
+  }
